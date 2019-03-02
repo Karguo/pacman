@@ -34,6 +34,19 @@ module Pacman
       end
     end
 
+    def next_move
+      case @facing
+      when "NORTH"
+        [@east, @north + 1]
+      when "SOUTH"
+        [@east, @north - 1]
+      when "EAST"
+        [@east + 1, @north]
+      when "WEST"
+        [@east - 1, @north]
+      end
+    end
+
     def turn_left
       @facing = case @facing
       when "NORTH" then "WEST"

@@ -61,6 +61,10 @@ RSpec.describe Pacman::Puck do
       subject.turn_right
       expect(subject.facing).to eq("EAST")
     end
+
+    it "next move is to (0, 1)" do
+      expect(subject.next_move).to eq([0, 1])
+    end
   end
 
   context "when facing south" do
@@ -79,6 +83,10 @@ RSpec.describe Pacman::Puck do
     it "turns right to face west" do
       subject.turn_right
       expect(subject.facing).to eq("WEST")
+    end
+
+    it "next move is to (0, -1)" do
+      expect(subject.next_move).to eq([0, -1])
     end
   end
 
@@ -99,6 +107,10 @@ RSpec.describe Pacman::Puck do
       subject.turn_right
       expect(subject.facing).to eq("SOUTH")
     end
+
+    it "next move is to (1, 0)" do
+      expect(subject.next_move).to eq([1, 0])
+    end
   end
 
   context "when facing west" do
@@ -117,6 +129,10 @@ RSpec.describe Pacman::Puck do
     it "turns right to face north" do
       subject.turn_right
       expect(subject.facing).to eq("NORTH")
+    end
+
+    it "next move is to (-1, 0)" do
+      expect(subject.next_move).to eq([-1, 0])
     end
   end
 

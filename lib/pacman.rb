@@ -12,6 +12,7 @@ require "pacman/puck"
 require "pacman/grid"
 require "pacman/simulator"
 require "pacman/command"
+require "pacman/cli"
 
 module Pacman
   
