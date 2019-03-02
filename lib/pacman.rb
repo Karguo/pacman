@@ -11,6 +11,7 @@ require "pacman/version"
 require "pacman/puck"
 require "pacman/grid"
 require "pacman/simulator"
+require "pacman/command"
 
 module Pacman
   
