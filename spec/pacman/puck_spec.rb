@@ -44,4 +44,40 @@ RSpec.describe Pacman::Puck do
     expect(subject.north).to eq(-3)
   end
 
+  context "when facing north" do
+    subject { Pacman::Puck.new(0, 0, "NORTH") }
+
+    it "moves north" do
+      subject.move
+      expect(subject.north).to eq(1)
+    end
+  end
+
+  context "when facing south" do
+    subject { Pacman::Puck.new(0, 0, "SOUTH") }
+
+    it "moves south" do
+      subject.move
+      expect(subject.north).to eq(-1)
+    end
+  end
+
+  context "when facing east" do
+    subject { Pacman::Puck.new(0, 0, "EAST") }
+
+    it "moves east" do
+      subject.move
+      expect(subject.east).to eq(1)
+    end
+  end
+
+  context "when facing west" do
+    subject { Pacman::Puck.new(0, 0, "WEST") }
+
+    it "moves west" do
+      subject.move
+      expect(subject.east).to eq(-1)
+    end
+  end
+
 end
