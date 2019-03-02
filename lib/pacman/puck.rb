@@ -52,5 +52,13 @@ module Pacman
       end
     end
 
+    def report
+      {
+        east: east,
+        north: north,
+        facing: facing
+      }
+    end
+
   end
 end

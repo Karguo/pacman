@@ -120,4 +120,16 @@ RSpec.describe Pacman::Puck do
     end
   end
 
+  context "report" do
+    subject { Pacman::Puck.new(3, 4, "EAST") }
+
+    it "show puck's current location and which way it is facing" do
+      expect(subject.report).to eq({
+        east: 3,
+        north: 4,
+        facing: "EAST"
+      })
+    end
+  end
+
 end
