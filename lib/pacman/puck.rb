@@ -1,28 +1,28 @@
 
 module Pacman
   class Puck
-    attr_reader :east, :north, :facing
+    attr_reader :x_position, :y_position, :facing
 
-    def initialize(east = 0, north = 0, facing = "NORTH")
-      @east = east
-      @north = north
+    def initialize(x_position = 0, y_position = 0, facing = "NORTH")
+      @x_position = x_position
+      @y_position = y_position
       @facing = facing
     end
 
     def move_east
-      @east += 1
+      @x_position += 1
     end
 
     def move_west
-      @east -= 1
+      @x_position -= 1
     end
 
     def move_north
-      @north += 1
+      @y_position += 1
     end
 
     def move_south
-      @north -= 1
+      @y_position -= 1
     end
 
     def move
@@ -37,13 +37,13 @@ module Pacman
     def next_move
       case @facing
       when "NORTH"
-        [@east, @north + 1]
+        [@x_position, @y_position + 1]
       when "SOUTH"
-        [@east, @north - 1]
+        [@x_position, @y_position - 1]
       when "EAST"
-        [@east + 1, @north]
+        [@x_position + 1, @y_position]
       when "WEST"
-        [@east - 1, @north]
+        [@x_position - 1, @y_position]
       end
     end
 
@@ -67,8 +67,8 @@ module Pacman
 
     def report
       {
-        east: east,
-        north: north,
+        x_position: x_position,
+        y_position: y_position,
         facing: facing
       }
     end

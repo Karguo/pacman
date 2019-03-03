@@ -6,10 +6,10 @@ module Pacman
       @grid = grid
     end
 
-    def place(east, north, facing)
-      return unless @grid.valid_position?(east, north)
+    def place(x_position, y_position, facing)
+      return unless @grid.valid_position?(x_position, y_position)
 
-      @puck = Puck.new(east, north, facing)
+      @puck = Puck.new(x_position, y_position, facing)
     end
 
     def move
@@ -28,7 +28,7 @@ module Pacman
 
     def report
       position = puck.report
-      puts "Output: #{position[:east]},#{position[:north]},#{position[:facing]}"
+      puts "Output: #{position[:x_position]},#{position[:y_position]},#{position[:facing]}"
     end
 
     def puck_placed?

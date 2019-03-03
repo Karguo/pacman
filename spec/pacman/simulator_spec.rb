@@ -51,7 +51,7 @@ RSpec.describe Pacman::Simulator do
     end
 
     it "puck to report" do
-      expect(puck).to receive(:report) {{ east: 3, north: 3, facing: "EAST" }}
+      expect(puck).to receive(:report) {{ x_position: 3, y_position: 3, facing: "EAST" }}
       message = "Output: 3,3,EAST\n"
       expect { subject.report }.to output(message).to_stdout
     end

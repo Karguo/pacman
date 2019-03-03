@@ -6,42 +6,42 @@ RSpec.describe Pacman::Puck do
 
   it "moves 2 spaces east" do
     2.times { subject.move_east }
-    expect(subject.east).to eq(2)
+    expect(subject.x_position).to eq(2)
   end
 
   it "moves 3 spaces east" do
     3.times { subject.move_east }
-    expect(subject.east).to eq(3)
+    expect(subject.x_position).to eq(3)
   end
 
   it "moves 2 spaces west" do
     2.times { subject.move_west }
-    expect(subject.east).to eq(-2)
+    expect(subject.x_position).to eq(-2)
   end
 
   it "moves 3 spaces west" do
     3.times { subject.move_west }
-    expect(subject.east).to eq(-3)
+    expect(subject.x_position).to eq(-3)
   end
 
   it "moves 2 spaces north" do
     2.times { subject.move_north }
-    expect(subject.north).to eq(2)
+    expect(subject.y_position).to eq(2)
   end
 
   it "moves 3 spaces north" do
     3.times { subject.move_north }
-    expect(subject.north).to eq(3)
+    expect(subject.y_position).to eq(3)
   end
 
   it "moves 2 spaces south" do
     2.times { subject.move_south }
-    expect(subject.north).to eq(-2)
+    expect(subject.y_position).to eq(-2)
   end
 
   it "moves 3 spaces south" do
     3.times { subject.move_south }
-    expect(subject.north).to eq(-3)
+    expect(subject.y_position).to eq(-3)
   end
 
   context "when facing north" do
@@ -49,7 +49,7 @@ RSpec.describe Pacman::Puck do
 
     it "moves north" do
       subject.move
-      expect(subject.north).to eq(1)
+      expect(subject.y_position).to eq(1)
     end
 
     it "turns left to face west" do
@@ -72,7 +72,7 @@ RSpec.describe Pacman::Puck do
 
     it "moves south" do
       subject.move
-      expect(subject.north).to eq(-1)
+      expect(subject.y_position).to eq(-1)
     end
 
     it "turns left to face east" do
@@ -95,7 +95,7 @@ RSpec.describe Pacman::Puck do
 
     it "moves east" do
       subject.move
-      expect(subject.east).to eq(1)
+      expect(subject.x_position).to eq(1)
     end
 
     it "turns left to face north" do
@@ -118,7 +118,7 @@ RSpec.describe Pacman::Puck do
 
     it "moves west" do
       subject.move
-      expect(subject.east).to eq(-1)
+      expect(subject.x_position).to eq(-1)
     end
 
     it "turns left to face south" do
@@ -141,8 +141,8 @@ RSpec.describe Pacman::Puck do
 
     it "show puck's current location and which way it is facing" do
       expect(subject.report).to eq({
-        east: 3,
-        north: 4,
+        x_position: 3,
+        y_position: 4,
         facing: "EAST"
       })
     end
